@@ -160,9 +160,6 @@ sub configure {
     #init some file like perltidy and perlcritic rc files
     $self->before_build;
 
-    #git files
-    my @git_files = qw/Changes dist.ini README.mkdn/;
-
     $self->add_bundle('Filter', {bundle => '@Basic', remove => ['MakeMaker', 'UploadToCPAN']});
     $self->add_plugins(
         'ModuleBuild',
