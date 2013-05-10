@@ -16,8 +16,24 @@ dzil listdeps --missing | cpanm
 dzil clean
 AUTHOR_TESTING=1 RELEASE_TESTING=1 dzil cover
 
-git checkout master
-git reset --hard origin/master
-git checkout devel
-git reset --hard origin/devel
-git push --mirror git@github.com:celogeek/Dist-Zilla-PluginBundle-GRS.git
+echo "Detecting current branch against $CI_BUILD_REF ..."
+MASTER=$(git rev-parse origin/master)
+DEVEL=$(git rev-parse origin/devel)
+
+case $CI_BUILD_REF in
+	$MASTER)
+		CURRENT=master
+		;;
+	$DEVEL)
+		CURRENT=devel
+		;;
+esac
+
+if [ -n "$CURRENT" ]
+then
+	echo "Current branch : $CURRENT"
+	git checkout $CURRENT
+	git reset --hard origin/$CURRENT
+	git push --mirror git@github.com:celogeek/Dist-Zilla-PluginBundle-GRS.git
+fi
+
