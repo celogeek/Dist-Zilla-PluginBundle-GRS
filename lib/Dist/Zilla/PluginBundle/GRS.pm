@@ -19,7 +19,6 @@ This is the bundle for GRS (Git Redmine Suite), and is equivalent to create this
   [Prereqs]
   [MinimumPerl]
   [Test::Compile]
-  [CheckChangeLog]
   [Test::UnusedVars]
   [PodCoverageTests]
   [PruneFiles]
@@ -164,7 +163,7 @@ sub configure {
     #git files
     my @git_files = qw/Changes dist.ini README.mkdn/;
 
-    $self->add_bundle('Filter', {bundle => '@Basic', remove => ['MakeMaker', 'UploadToCPAN]});
+    $self->add_bundle('Filter', {bundle => '@Basic', remove => ['MakeMaker', 'UploadToCPAN']});
     $self->add_plugins(
         'ModuleBuild',
         'ReportVersions',
@@ -174,7 +173,6 @@ sub configure {
         'Prereqs',
         'MinimumPerl',
         'Test::Compile',
-        'CheckChangeLog',
         'Test::UnusedVars',
         'PodCoverageTests',
         'PruneFiles',
