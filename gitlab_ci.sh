@@ -20,4 +20,4 @@ git checkout master
 git reset --hard origin/master
 git checkout devel
 git reset --hard origin/devel
-git push --mirror https://github.com/celogeek/Dist-Zilla-PluginBundle-GRS.git
+git push --mirror git@github.com:celogeek/Dist-Zilla-PluginBundle-GRS.git
