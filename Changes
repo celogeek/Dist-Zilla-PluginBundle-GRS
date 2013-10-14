@@ -1,3 +1,6 @@
+0.07  2013-10-14 22:54:24 GMT
+    * Feature #340 : Add Test::Pod dependency (Celogeek San)
+
 0.06  2013-10-14 21:42:37 GMT
     * Bug #339 : Remove useless deps (Celogeek San)
 
