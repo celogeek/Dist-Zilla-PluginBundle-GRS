@@ -33,6 +33,7 @@ This is the bundle for GRS (Git Redmine Suite), and is equivalent to create this
   perltidyrc = xt/perltidy.rc
   [Test::Perl::Critic]
   critic_config = xt/perlcritic.rc
+  [Test::Kwalitee::Extra]
 
 It also install :
 
@@ -180,6 +181,7 @@ sub configure {
         ['PodWeaver' => { 'config_plugin' => '@GRS' } ],
         ['PerlTidy' => { 'perltidyrc' => 'xt/perltidy.rc' }],
         ['Test::Perl::Critic' => {'critic_config' => 'xt/perlcritic.rc'}],
+		['Test::Kwalitee::Extra'],
     );
 
     return;
